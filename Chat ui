@@ -1,0 +1,96 @@
+import 'package:flutter/material.dart';
+
+class ChatScreen extends StatefulWidget {
+
+  @override
+
+  _ChatScreenState createState() => _ChatScreenState();
+
+}
+
+class _ChatScreenState extends State<ChatScreen> {
+
+  final _textController = TextEditingController();
+
+  @override
+
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+
+      appBar: AppBar(
+
+        title: Text('Chat'),
+
+      ),
+
+      body: Column(
+
+        children: <Widget>[
+
+          Expanded(
+
+            child: ListView.builder(
+
+              itemCount: 10,
+
+              itemBuilder: (context, index) {
+
+                return ListTile(
+
+                  title: Text('Message $index'),
+
+                );
+
+              },
+
+            ),
+
+          ),
+
+          Container(
+
+            padding: EdgeInsets.all(8.0),
+
+            child: TextField(
+
+              controller: _textController,
+
+              decoration: InputDecoration(
+
+                hintText: 'Type a message...',
+
+              ),
+
+            ),
+
+          ),
+
+          Container(
+
+            child: FlatButton(
+
+              onPressed: () {
+
+                // Send the message
+
+                _textController.clear();
+
+              },
+
+              child: Text('Send'),
+
+            ),
+
+          ),
+
+        ],
+
+      ),
+
+    );
+
+  }
+
+}
+
