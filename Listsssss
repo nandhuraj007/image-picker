@@ -1,0 +1,24 @@
+ListView.builder(
+
+    itemCount: list.length,
+
+    itemBuilder: (BuildContext context, int index) {
+
+        return ListTile(
+
+            leading: CircleAvatar(
+
+                backgroundImage: NetworkImage(list[index]['profile_pic']),
+
+            ),
+
+            title: Text(list[index]['name']),
+
+            subtitle: Text(list[index]['time']),
+
+        );
+
+    },
+
+);
+
