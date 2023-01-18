@@ -1,0 +1,61 @@
+Flutter Textfield Text Widget
+
+Nandhu
+
+Make a texfield in Flutter that accept  a text and the accepted text will show on a text widget on the next row
+
+Here is an example of how you can create a text field in Flutter that accepts a text and displays it on a text widget on the next row:
+
+Copy code
+
+class MyApp extends StatefulWidget {
+
+  @override
+
+  _MyAppState createState() => _MyAppState();
+
+}
+
+class _MyAppState extends State<MyApp> {
+
+  String _text = '';
+
+  @override
+
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+
+      body: Column(
+
+        children: <Widget>[
+
+          TextField(
+
+            onChanged: (text) {
+
+              setState(() {
+
+                _text = text;
+
+              });
+
+            },
+
+          ),
+
+          Text(_text),
+
+        ],
+
+      ),
+
+    );
+
+  }
+
+}
+
+In this example, the TextField widget accepts user input and calls the onChanged callback with the new text. The callback updates the _text variable, which is used to set the text of the Text widget. The Column widget is used to place the text field and the text widget on top of each other.
+
+Please note that you need to wrap your MyApp widget inside a MaterialApp to be able to use the Scaffold widget.
